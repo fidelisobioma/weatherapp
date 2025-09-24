@@ -3,6 +3,8 @@ import HourlyForecast from "./HourlyForecast";
 import { transformHourlyData } from "@/utils/transformHourlyData";
 import { getWeatherIconPath } from "@/utils/weatherIcons";
 
+import { UNIT_LABELS } from "@/utils/unitLabels";
+
 interface WeatherData {
   location: string;
   current: {
@@ -27,7 +29,19 @@ interface WeatherData {
   };
 }
 
-export default function Weather({ weather }: { weather: WeatherData }) {
+interface WeatherUnits {
+  temperature: "celsius" | "fahrenheit";
+  wind: "kmh" | "mph";
+  precipitation: "mm" | "inch";
+}
+
+export default function Weather({
+  weather,
+  units,
+}: {
+  weather: WeatherData;
+  units: WeatherUnits;
+}) {
   const hourlyData = transformHourlyData(
     weather.hourly.time,
     weather.hourly.temperature_2m,
@@ -89,7 +103,7 @@ export default function Weather({ weather }: { weather: WeatherData }) {
             <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
               <p className="text-lg font-medium text-[#d4d3d9]">Wind</p>
               <p className="font-[300] text-[1.5rem] ">
-                {weather.current.wind_speed_10m} km/h
+                {weather.current.wind_speed_10m} {UNIT_LABELS.wind[units.wind]}
               </p>
             </div>
             <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
@@ -97,7 +111,8 @@ export default function Weather({ weather }: { weather: WeatherData }) {
                 Precipitation
               </p>
               <p className="font-[300] text-[1.5rem]">
-                {weather.current.precipitation} mm
+                {weather.current.precipitation}{" "}
+                {UNIT_LABELS.precipitation[units.precipitation]}
               </p>
             </div>
           </div>
