@@ -13,7 +13,7 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
   const [selectedDay, setSelectedDay] = useState(days[0]);
 
   return (
-    <div className="bg-[#262540] shadow rounded-md p-6 space-y-4 h-[640px] overflow-y-scroll relative">
+    <div className="bg-[#262540] shadow rounded-md p-6 space-y-4 h-[630px] overflow-y-scroll relative">
       {/* Day selector */}
       <div className="flex gap-4 justify-between items-center ">
         <div className="font-semibold text-xl leading-[120%]">

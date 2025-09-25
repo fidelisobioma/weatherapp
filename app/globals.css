@@ -5,11 +5,23 @@
   --foreground: #171717;
 }
 
-@theme inline {
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+} */
+
+@theme {
+  --animate-wave: wave 1.4s infinite ease-in-out;
+  @keyframes wave {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-8px);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
