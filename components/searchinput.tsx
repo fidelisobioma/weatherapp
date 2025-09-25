@@ -38,7 +38,7 @@ const SearchInput = () => {
         </div>
         <button
           type="submit"
-          className="bg-[#4658d9] w-full md:w-auto text-center  text-white font-[500] leading-[120%] text-[1.25rem] py-[1rem] px-[1.5rem] mt-[0.75rem] md:mt-0 rounded-md"
+          className="bg-[#4658d9] w-full md:w-auto text-center  text-white font-[500] leading-[120%] text-[1.25rem] py-[1rem] px-[1.5rem] mt-[0.75rem] md:mt-0 rounded-md cursor-pointer"
         >
           Search
         </button>
