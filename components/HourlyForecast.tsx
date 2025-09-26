@@ -23,7 +23,7 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
           <select
             value={selectedDay}
             onChange={(e) => setSelectedDay(e.target.value)}
-            className="bg-[#3c3b5e] p-3 rounded "
+            className="bg-[#3c3b5e] p-3 rounded hover:cursor-pointer"
           >
             {days.map((day) => (
               <option
