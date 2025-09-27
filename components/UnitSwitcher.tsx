@@ -81,9 +81,9 @@ export default function UnitSwitcher() {
     setDisplay(!display);
   }
   return (
-    <div className="">
+    <div>
       <div
-        className="flex justify-between gap-2 items-center px-4 py-3 rounded bg-[#262540] max-w-[119px] float-end cursor-pointer"
+        className="flex justify-between gap-2 items-center px-4 py-3 rounded bg-[#262540] hover:bg-[#3c3b5e] transition-colors duration-200  max-w-[119px] float-end cursor-pointer"
         onClick={handleClick}
       >
         <div>

@@ -17,7 +17,7 @@ const Error = () => {
             />
           </div>
 
-          <div className="flex justify-between gap-2 items-center px-4 py-3 rounded bg-[#262540] max-w-[119px] float-end cursor-pointer">
+          <div className="flex justify-between gap-2 items-center px-4 py-3 rounded bg-[#262540] max-w-[119px] float-end ">
             <div>
               <Image
                 src="/images/icon-units.svg"
@@ -58,7 +58,7 @@ const Error = () => {
           </p>
           <button
             onClick={() => window.location.reload()}
-            className="mt-4 px-4 py-2 flex gap-2 bg-[#262540] items-center rounded-md hover:cursor-pointer"
+            className="mt-4 px-4 py-2 flex gap-2 bg-[#262540] hover:bg-[#3c3b5e]  items-center rounded-md hover:cursor-pointer"
           >
             <Image
               src="/images/icon-retry.svg"

@@ -56,7 +56,7 @@ const SearchInput = () => {
         </div>
         <button
           type="submit"
-          className="font-dmsans bg-[#4658d9] w-full md:w-auto text-center  text-white font-[500] leading-[120%] text-[1.25rem] py-[1rem] px-[1.5rem] mt-[0.75rem] md:mt-0 rounded-md cursor-pointer"
+          className="font-dmsans bg-[#4658d9] transition-colors duration-200 hover:bg-[#6377fa] hover:shadow-lg w-full md:w-auto text-center  text-white font-[500] leading-[120%] text-[1.25rem] py-[1rem] px-[1.5rem] mt-[0.75rem] md:mt-0 rounded-md cursor-pointer"
         >
           Search
         </button>

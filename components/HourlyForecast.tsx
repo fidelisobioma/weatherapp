@@ -25,7 +25,7 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
         <div className="relative">
           <button
             onClick={() => setOpen(!open)}
-            className="flex gap-4 justify-between items-center  bg-[#3c3b5e] px-3 py-2 rounded hover:cursor-pointer"
+            className="flex gap-4 justify-between items-center  bg-[#3c3b5e] hover:bg-[#57568a]  transition-colors duration-200  px-3 py-2 rounded hover:cursor-pointer"
           >
             <span className="font-dmsans text-sm font-[500] leading-[100%]">
               {selectedDay}
