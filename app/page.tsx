@@ -1,19 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Navbar from "@/components/navbar";
 import NoResult from "@/components/noResult";
 import SearchInput from "@/components/searchinput";
 import Weather from "@/components/Weather";
 import { addSearchHistory } from "@/utils/searchHistory";
 
-export default async function Home({
-  searchParams,
-}: {
-  searchParams?: {
-    q?: string;
-    temperature?: string;
-    wind?: string;
-    precipitation?: string;
-  };
-}) {
+export default async function Home({ searchParams }: { searchParams?: any }) {
   const location = searchParams?.q || "berlin";
   const temperatureUnit =
     searchParams?.temperature === "fahrenheit" ? "fahrenheit" : "celsius";
