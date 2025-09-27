@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import NoResult from "@/components/noResult";
-import SearchInput from "@/components/searchInput";
+import SearchInput from "@/components/searchinput";
 import Weather from "@/components/Weather";
 import { addSearchHistory } from "@/utils/searchHistory";
 
