@@ -4,7 +4,7 @@ import SearchInput from "@/components/SearchInput";
 import Weather from "@/components/Weather";
 import { addSearchHistory } from "@/utils/searchHistory";
 
-interface PageProps {
+interface HomePageProps {
   searchParams?: {
     q?: string;
     temperature?: string;
@@ -13,7 +13,7 @@ interface PageProps {
   };
 }
 
-export default async function Home({ searchParams }: PageProps) {
+export default async function Home({ searchParams }: HomePageProps) {
   const location = searchParams?.q || "berlin";
   const temperatureUnit =
     searchParams?.temperature === "fahrenheit" ? "fahrenheit" : "celsius";
