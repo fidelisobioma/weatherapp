@@ -2,7 +2,7 @@ interface NoResultsProps {
   query: string;
 }
 
-export default function NoResults({ query }: NoResultsProps) {
+export default function NoResult({ query }: NoResultsProps) {
   return (
     <div className="flex flex-col items-center justify-center py-16 text-center">
       <p className=" text-white text-xl font-semibold">

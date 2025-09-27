@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
-import NoResults from "@/components/NoResult";
-import SearchInput from "@/components/Searchinput";
+import NoResult from "@/components/NoResult";
+import SearchInput from "@/components/SearchInput";
 import Weather from "@/components/Weather";
 import { addSearchHistory } from "@/utils/searchHistory";
 
@@ -36,7 +36,7 @@ export default async function Home({ searchParams }: PageProps) {
             How’s the sky looking today?
           </h1>
           <SearchInput />
-          <NoResults query={location} />
+          <NoResult query={location} />
         </div>
       </div>
     );
