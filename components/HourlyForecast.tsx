@@ -37,7 +37,7 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
           </button>
 
           {open && (
-            <ul className="absolute p-2 mt-1 w-40 bg-[#2c2b45] rounded-md shadow-lg z-10">
+            <ul className="absolute p-2 px-3 mt-1  bg-[#2c2b45] rounded-md shadow-lg z-10">
               {days.map((day) => (
                 <li
                   key={day}
@@ -45,7 +45,7 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
                     setSelectedDay(day);
                     setOpen(false);
                   }}
-                  className={`flex justify-between items-center px-3 py-2 rounded-md text-sm font-dmsans hover:bg-[#4c4b6e] hover:cursor-pointer ${
+                  className={`flex justify-between items-center px-3 py-1 rounded-md text-sm font-dmsans hover:bg-[#4c4b6e] hover:cursor-pointer ${
                     day === selectedDay
                       ? "bg-[#57568a] text-white font-semibold"
                       : "text-gray-200"

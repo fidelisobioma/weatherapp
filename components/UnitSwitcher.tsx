@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 
+type UnitType = "temperature" | "wind" | "precipitation";
 const UNIT_OPTIONS = {
   temperature: [
     { value: "celsius", label: "Celsius (°C)" },
@@ -17,6 +18,12 @@ const UNIT_OPTIONS = {
     { value: "mm", label: "Millimeters (mm)" },
     { value: "inch", label: "Inches (in)" },
   ],
+};
+
+const UNIT_LABELS: Record<UnitType, string> = {
+  temperature: "Temperature",
+  wind: "Wind Speed",
+  precipitation: "Precipitation",
 };
 
 export default function UnitSwitcher() {
@@ -109,26 +116,27 @@ export default function UnitSwitcher() {
             {checked ? "Switch to Metric" : "Switch to Imperial"}
           </button>
         </div>
-        {Object.entries(UNIT_OPTIONS).map(([type, options]) => (
-          <div key={type} className="">
-            <h3 className="font-medium text-[14px]  capitalize leading-[120%] text-[#acacb7]">
-              {type}
+        {(
+          Object.entries(UNIT_OPTIONS) as [
+            UnitType,
+            { value: string; label: string }[],
+          ][]
+        ).map(([type, options]) => (
+          <div key={type}>
+            <h3 className="font-medium text-[14px] leading-[120%] text-[#acacb7]">
+              {UNIT_LABELS[type]}
             </h3>
             {options.map((opt) => {
-              const isActive =
-                current[type as keyof typeof current] === opt.value;
+              const isActive = current[type] === opt.value;
               return (
                 <button
                   key={opt.value}
-                  onClick={() =>
-                    handleChange(
-                      type as "temperature" | "wind" | "precipitation",
-                      opt.value,
-                    )
-                  }
-                  className={`flex w-full items-center justify-between rounded-md mt-4 hover:bg-[#3c3b5e] hover:cursor-pointer py-1 px-3 ${isActive ? "bg-[#3c3b5e] py-1 px-3" : ""}`}
+                  onClick={() => handleChange(type, opt.value)}
+                  className={`flex w-full items-center justify-between rounded-md mt-4 hover:bg-[#3c3b5e] hover:cursor-pointer py-1 px-3 ${
+                    isActive ? "bg-[#3c3b5e] py-1 px-3" : ""
+                  }`}
                 >
-                  <span className="block font-dmsans  text-sm text-white font-semibold">
+                  <span className="block font-dmsans text-sm text-white font-semibold">
                     {opt.label}
                   </span>
                   {isActive && (
