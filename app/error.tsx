@@ -27,7 +27,7 @@ const Error = () => {
               />
             </div>
 
-            <div className="font-[500] text-white text-sm leading-[120%]">
+            <div className="font-dmsans font-[500] text-white text-sm leading-[120%]">
               Units
             </div>
             <div>
@@ -49,10 +49,10 @@ const Error = () => {
               height={50}
             />
           </div>
-          <h2 className="font-bold text-white text-center text-[3.25rem] leading-[120%] my-6">
+          <h2 className="font-bricolage font-bold text-white text-center text-[3.25rem] leading-[120%] my-6">
             Something went wrong
           </h2>
-          <p className="text-[#d4d3d9] text-center text-sm">
+          <p className="font-dmsans text-[#d4d3d9] text-center text-sm">
             We couldn’t connect to the server (API error). Please try again in a
             few moments.
           </p>
@@ -66,7 +66,9 @@ const Error = () => {
               width={16}
               height={16}
             />
-            <span className="text-[#d4d3d9] text-center text-sm"> Retry</span>
+            <span className="font-dmsans text-[#d4d3d9] text-center text-sm">
+              Retry
+            </span>
           </button>
         </div>
       </div>

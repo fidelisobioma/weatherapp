@@ -13,6 +13,7 @@
 } */
 
 @theme {
+  /* custome animation */
   --animate-wave: wave 1.4s infinite ease-in-out;
   @keyframes wave {
     0% {
@@ -22,6 +23,10 @@
       transform: translateY(-8px);
     }
   }
+
+  /* font famiily */
+  --font-bricolage: var(--font-bricolage), sans-serif;
+  --font-dmsans: var(--font-dmsans), sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {

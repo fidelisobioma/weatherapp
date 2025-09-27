@@ -56,7 +56,7 @@ const SearchInput = () => {
         </div>
         <button
           type="submit"
-          className="bg-[#4658d9] w-full md:w-auto text-center  text-white font-[500] leading-[120%] text-[1.25rem] py-[1rem] px-[1.5rem] mt-[0.75rem] md:mt-0 rounded-md cursor-pointer"
+          className="font-dmsans bg-[#4658d9] w-full md:w-auto text-center  text-white font-[500] leading-[120%] text-[1.25rem] py-[1rem] px-[1.5rem] mt-[0.75rem] md:mt-0 rounded-md cursor-pointer"
         >
           Search
         </button>
@@ -73,7 +73,7 @@ const SearchInput = () => {
               className="animate-spin"
             />
           </div>
-          <p className="text-white">Search in progress...</p>
+          <p className="font-dmsans text-white">Search in progress...</p>
         </div>
       )}
       {/* search history */}
@@ -83,7 +83,7 @@ const SearchInput = () => {
             <button
               key={item}
               onClick={() => setQuery(item)}
-              className="block w-full text-left px-4 py-2 text-white hover:bg-[#3c3b5e] cursor-pointer"
+              className="font-dmsans block w-full text-left px-4 py-2 text-white hover:bg-[#3c3b5e] cursor-pointer"
             >
               {item}
             </button>

@@ -16,7 +16,7 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
     <div className="bg-[#262540] shadow rounded-md p-6 space-y-4 h-[630px] overflow-y-scroll relative">
       {/* Day selector */}
       <div className="flex gap-4 justify-between items-center ">
-        <div className="font-semibold text-xl leading-[120%]">
+        <div className="font-dmsans font-medium text-xl leading-[120%]">
           <p>Hourly forecast</p>
         </div>
         <div>
@@ -29,7 +29,7 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
               <option
                 key={day}
                 value={day}
-                className="text-sm font-[500] leading-[100%]"
+                className="font-dmsans text-sm font-[500] leading-[100%]"
               >
                 {day}
               </option>
@@ -45,7 +45,6 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
             className="flex justify-between bg-[#3c3b5e] shadow-md rounded p-4"
           >
             <div className="flex gap-2 items-center">
-              {/* <div className="size-2 bg-white rounded-full"></div> */}
               <Image
                 src={item.icon}
                 alt="weather icon"
@@ -53,11 +52,13 @@ export default function HourlyForecast({ data }: { data: HourlyData }) {
                 height={40}
               />
               <div>
-                <p className="font-medium">{item.hour}</p>
+                <p className="font-dmsans font-medium text-lg">{item.hour}</p>
               </div>
             </div>
             <div>
-              <p>{Math.trunc(item.temp)}°</p>
+              <p className=" text-sm text-white font-dmsans font-medium">
+                {Math.trunc(item.temp)}°
+              </p>
             </div>
           </div>
         ))}

@@ -83,14 +83,19 @@ export default function UnitSwitcher() {
               return (
                 <button
                   key={opt.value}
-                  onClick={() => handleChange(type as any, opt.value)}
+                  onClick={() =>
+                    handleChange(
+                      type as "temperature" | "wind" | "precipitation",
+                      opt.value,
+                    )
+                  }
                   className={`flex w-full items-center justify-between rounded-md mt-4 hover:bg-[#3c3b5e] hover:cursor-pointer py-1 px-3 ${isActive ? "bg-[#3c3b5e] py-1 px-3" : ""}`}
                 >
-                  <span className="block  text-sm text-white font-semibold">
+                  <span className="block font-dmsans  text-sm text-white font-semibold">
                     {opt.label}
                   </span>
                   {isActive && (
-                    <div className="text-white">
+                    <div>
                       <Image
                         src="/images/icon-checkmark.svg"
                         alt="checkmark"

@@ -25,7 +25,7 @@ export default function Loading() {
               />
             </div>
 
-            <div className="font-[500] text-white text-sm leading-[120%]">
+            <div className="font-dmsans font-[500] text-white text-sm leading-[120%]">
               Units
             </div>
             <div>
@@ -39,7 +39,7 @@ export default function Loading() {
           </div>
         </div>
 
-        <h1 className="font-bold text-white text-center text-[3.25rem] leading-[120%] py-[3rem] lg:py-[4rem]">
+        <h1 className="font-bricolage font-bold text-white text-center text-[3.25rem] leading-[120%] py-[3rem] lg:py-[4rem]">
           How’s the sky looking today?
         </h1>
 
@@ -61,7 +61,7 @@ export default function Loading() {
             </div>
             <button
               type="submit"
-              className="bg-[#4658d9] w-full md:w-auto text-center  text-white font-[500] leading-[120%] text-[1.25rem] py-[1rem] px-[1.5rem] mt-[0.75rem] md:mt-0 rounded-md"
+              className="font-dmsans bg-[#4658d9] w-full md:w-auto text-center  text-white font-[500] leading-[120%] text-[1.25rem] py-[1rem] px-[1.5rem] mt-[0.75rem] md:mt-0 rounded-md"
             >
               Search
             </button>
@@ -79,7 +79,7 @@ export default function Loading() {
                     <div className="size-2 bg-white transform -translate-y-2 rounded-full animate-wave [animation-delay:0.2s]"></div>
                     <div className="size-2 bg-white rounded-full animate-wave [animation-delay:0.4s]"></div>
                   </div>
-                  <p className="text-center">Loading...</p>
+                  <p className="text-center font-dmsans">Loading...</p>
                 </div>
               </div>
 
@@ -87,7 +87,7 @@ export default function Loading() {
               <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 ">
                 {/* Feels Like */}
                 <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
-                  <p className="text-lg font-medium text-[#d4d3d9]">
+                  <p className="font-dmsans text-lg font-medium text-[#d4d3d9]">
                     Feels Like
                   </p>
                   <div className="animate-pulse">--</div>
@@ -95,19 +95,23 @@ export default function Loading() {
 
                 {/* Humidity */}
                 <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
-                  <p className="text-lg font-medium text-[#d4d3d9]">Humidity</p>
+                  <p className="font-dmsans text-lg font-medium text-[#d4d3d9]">
+                    Humidity
+                  </p>
                   <div className="animate-pulse">--</div>
                 </div>
 
                 {/* Wind */}
                 <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
-                  <p className="text-lg font-medium text-[#d4d3d9]">Wind</p>
+                  <p className="font-dmsans text-lg font-medium text-[#d4d3d9]">
+                    Wind
+                  </p>
                   <div className="animate-pulse">--</div>
                 </div>
 
                 {/* Precipitation */}
                 <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
-                  <p className="text-lg font-medium text-[#d4d3d9]">
+                  <p className="font-dmsans text-lg font-medium text-[#d4d3d9]">
                     Precipitation
                   </p>
                   <div className="animate-pulse">--</div>
@@ -116,7 +120,7 @@ export default function Loading() {
 
               {/* daily forecats */}
               <div className="mt-12">
-                <p className="font-semibold text-white text-xl leading-[120%] mb-5">
+                <p className="font-dmsans font-semibold text-white text-xl leading-[120%] mb-5">
                   Daily forecast
                 </p>
                 <div className="grid grid-cols-3 md:grid-cols-7 gap-4">
@@ -133,7 +137,7 @@ export default function Loading() {
             {/* Hourly forecast skeleton */}
             <div className="space-y-5 bg-[#262540] h-[630px] shadow rounded-md p-6 animate-pulse">
               <div className="flex gap-4 justify-between items-center ">
-                <div className="font-semibold text-xl leading-[120%]">
+                <div className="font-dmsans font-semibold text-xl leading-[120%]">
                   <p>Hourly forecast</p>
                 </div>
                 <div>

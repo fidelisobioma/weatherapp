@@ -56,10 +56,10 @@ export default function Weather({
           {/* current weather */}
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-center  bg-[url('/images/bg-today-small.svg')] md:bg-[url('/images/bg-today-large.svg')] bg-cover bg-center bg-no-repeat  h-[286px] p-6 rounded-[20px]">
             <div>
-              <h2 className=" text-[1.75rem] text-center font-bold text-white leading-[120%]">
+              <h2 className="font-dmsans text-[1.75rem] text-center font-bold text-white leading-[120%]">
                 {weather.location}
               </h2>
-              <p className="font-[500] text-[1.25rem] text-center md:text-left leading-[120%] mt-[0.75rem]">
+              <p className="font-dmsans font-[500] text-[1.25rem] text-center md:text-left leading-[120%] mt-[0.75rem]">
                 {(() => {
                   const d = new Date(weather.current.time);
                   const weekday = d.toLocaleDateString("en-US", {
@@ -89,28 +89,34 @@ export default function Weather({
           </div>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 ">
             <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
-              <p className="text-lg font-medium text-[#d4d3d9]">Feels Like</p>
-              <p className="font-[300] text-[1.5rem]">
+              <p className="font-dmsans text-lg font-medium text-[#d4d3d9]">
+                Feels Like
+              </p>
+              <p className="font-dmsans font-[300] text-[1.5rem]">
                 {weather.current.apparent_temperature}°
               </p>
             </div>
             <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
-              <p className="text-lg font-medium text-[#d4d3d9]">Humidity</p>
-              <p className="font-[300] text-[1.5rem]">
+              <p className="font-dmsans text-lg font-medium text-[#d4d3d9]">
+                Humidity
+              </p>
+              <p className="font-dmsans font-[300] text-[1.5rem]">
                 {weather.current.relative_humidity_2m}%
               </p>
             </div>
             <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
-              <p className="text-lg font-medium text-[#d4d3d9]">Wind</p>
-              <p className="font-[300] text-[1.5rem] ">
+              <p className="font-dmsans text-lg font-medium text-[#d4d3d9]">
+                Wind
+              </p>
+              <p className="font-dmsans font-[300] text-[1.5rem] ">
                 {weather.current.wind_speed_10m} {UNIT_LABELS.wind[units.wind]}
               </p>
             </div>
             <div className="bg-[#262540] p-5 rounded-2xl flex flex-col justify-between">
-              <p className="text-lg font-medium text-[#d4d3d9] break-words">
+              <p className="font-dmsans text-lg font-medium text-[#d4d3d9] break-words">
                 Precipitation
               </p>
-              <p className="font-[300] text-[1.5rem]">
+              <p className="font-dmsans font-[300] text-[1.5rem]">
                 {weather.current.precipitation}{" "}
                 {UNIT_LABELS.precipitation[units.precipitation]}
               </p>
@@ -118,14 +124,14 @@ export default function Weather({
           </div>
           {/* daily forecast */}
           <div className="mt-12">
-            <p className="font-semibold text-white text-xl leading-[120%] mb-5">
+            <p className="font-dmsans font-semibold text-white text-xl leading-[120%] mb-5">
               Daily forecast
             </p>
             <div className="grid grid-cols-3 md:grid-cols-7 gap-4">
               {weather.daily.time.map((date: string, i: number) => (
                 <div key={date} className="bg-[#3c3b5e] py-4 px-2 rounded-lg">
                   <div>
-                    <p className="text-center text-white font-medium text-lg leading-[120%] ">
+                    <p className=" font-dmsans text-center text-white font-medium text-lg leading-[120%] ">
                       {(() => {
                         const d = new Date(date);
                         const weekday = d.toLocaleDateString("en-US", {
@@ -158,7 +164,7 @@ export default function Weather({
         </div>
         {/* right */}
         {/* hourly forecast */}
-        <div className="">
+        <div>
           <HourlyForecast data={hourlyData} />
         </div>
       </div>
