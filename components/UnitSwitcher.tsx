@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const UNIT_OPTIONS = {
   temperature: [
@@ -24,6 +24,36 @@ export default function UnitSwitcher() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
+  // check if we are currently in imperial (fahrenheit/mph/inch)
+  const isImperial =
+    searchParams.get("temperature") === "fahrenheit" &&
+    searchParams.get("wind") === "mph" &&
+    searchParams.get("precipitation") === "inch";
+
+  const [checked, setChecked] = useState(isImperial);
+
+  useEffect(() => {
+    setChecked(isImperial);
+  }, [isImperial]);
+  const toggleUnits = () => {
+    const params = new URLSearchParams(searchParams);
+
+    if (checked) {
+      // if currently imperial → switch to metric
+      params.set("temperature", "celsius");
+      params.set("wind", "kmh");
+      params.set("precipitation", "mm");
+    } else {
+      // if currently metric → switch to imperial
+      params.set("temperature", "fahrenheit");
+      params.set("wind", "mph");
+      params.set("precipitation", "inch");
+    }
+
+    router.replace(`/?${params.toString()}`);
+  };
+
+  //individual switch
   // read current values (defaults if not set)
   const current = {
     temperature: searchParams.get("temperature") || "celsius",
@@ -37,7 +67,7 @@ export default function UnitSwitcher() {
   ) {
     const query = new URLSearchParams(searchParams.toString());
     query.set(type, value);
-    router.push(`/?${query.toString()}`);
+    router.replace(`/?${query.toString()}`);
   }
   function handleClick() {
     setDisplay(!display);
@@ -72,6 +102,14 @@ export default function UnitSwitcher() {
       <div
         className={`${display ? "shadow bg-[#262540] rounded-md flex gap-4 p-2 flex-col w-[200px] absolute right-0 top-12 clear-both  z-50" : "hidden"}`}
       >
+        <div className="">
+          <button
+            onClick={toggleUnits}
+            className="text-white font-dmsans cursor-pointer"
+          >
+            {checked ? "Switch to Metric" : "Switch to Imperial"}
+          </button>
+        </div>
         {Object.entries(UNIT_OPTIONS).map(([type, options]) => (
           <div key={type} className="">
             <h3 className="font-medium text-[14px]  capitalize leading-[120%] text-[#acacb7]">
