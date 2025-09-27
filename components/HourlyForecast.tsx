@@ -1,8 +1,8 @@
-// app/HourlyForecast.tsx
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
+import { ChevronDown } from "lucide-react";
 
 type HourlyData = {
   [day: string]: { hour: string; temp: number; icon: string }[];
@@ -11,32 +11,54 @@ type HourlyData = {
 export default function HourlyForecast({ data }: { data: HourlyData }) {
   const days = Object.keys(data);
   const [selectedDay, setSelectedDay] = useState(days[0]);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="bg-[#262540] shadow rounded-md p-6 space-y-4 h-[630px] overflow-y-scroll relative">
-      {/* Day selector */}
+      {/* Header */}
       <div className="flex gap-4 justify-between items-center ">
         <div className="font-dmsans font-medium text-xl leading-[120%]">
           <p>Hourly forecast</p>
         </div>
-        <div>
-          <select
-            value={selectedDay}
-            onChange={(e) => setSelectedDay(e.target.value)}
-            className="bg-[#3c3b5e] p-3 rounded hover:cursor-pointer"
+
+        {/* Custom Dropdown */}
+        <div className="relative">
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex justify-between items-center w-40 bg-[#3c3b5e] px-3 py-2 rounded hover:cursor-pointer"
           >
-            {days.map((day) => (
-              <option
-                key={day}
-                value={day}
-                className="font-dmsans text-sm font-[500] leading-[100%]"
-              >
-                {day}
-              </option>
-            ))}
-          </select>
+            <span className="font-dmsans text-sm font-[500] leading-[100%]">
+              {selectedDay}
+            </span>
+            <ChevronDown
+              size={16}
+              className={`transition-transform ${open ? "rotate-180" : ""}`}
+            />
+          </button>
+
+          {open && (
+            <ul className="absolute p-2 mt-1 w-40 bg-[#2c2b45] rounded-md shadow-lg z-10">
+              {days.map((day) => (
+                <li
+                  key={day}
+                  onClick={() => {
+                    setSelectedDay(day);
+                    setOpen(false);
+                  }}
+                  className={`flex justify-between items-center px-3 py-2 rounded-md text-sm font-dmsans hover:bg-[#4c4b6e] hover:cursor-pointer ${
+                    day === selectedDay
+                      ? "bg-[#57568a] text-white font-semibold"
+                      : "text-gray-200"
+                  }`}
+                >
+                  {day}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
+
       {/* Hourly display */}
       <div className="space-y-5 ">
         {data[selectedDay].map((item, i) => (

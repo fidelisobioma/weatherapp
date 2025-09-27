@@ -1,4 +1,5 @@
 "use client";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -91,11 +92,9 @@ export default function UnitSwitcher() {
           Units
         </div>
         <div>
-          <Image
-            src="/images/icon-dropdown.svg"
-            alt="dropdown"
-            width={12}
-            height={18}
+          <ChevronDown
+            size={16}
+            className={`text-white transition-transform ${display ? "rotate-180" : ""}`}
           />
         </div>
       </div>
